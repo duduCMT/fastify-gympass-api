@@ -3,6 +3,7 @@
 [![](https://img.shields.io/badge/NodeJS-project-green?logo=nodedotjs)](#)
 [![](https://img.shields.io/badge/Fastify-framework-darkgray?logo=fastify)](#)
 [![](https://img.shields.io/badge/Build%20to-learn-blue?logo=github)](#)
+
 <!--
 [![](https://img.shields.io/badge/Production-On%20Render-blue)]()
 -->
@@ -20,10 +21,14 @@ A GymPass-style API that allows users to register, authenticate, and interact wi
 
 ## 🚩 Setup
 
+First of all, create a `.env` file at the root of the project following the `.env.example`.
+
+Next, proceed by configuring the node version correctly.
+
 If you are using nvm, run:
 
 ```bash
-nvm use
+nvm install && nvm use
 ```
 
 Else, change your Node Version to `18.14.0`.
@@ -34,11 +39,10 @@ Install Dependencies With:
 npm install
 ```
 
-
 To run the project in developer mode, use:
 
 ```bash
-npm run dev
+npm run start:dev
 ```
 
 To run the project, use:
@@ -46,6 +50,7 @@ To run the project, use:
 ```bash
 npm run build && npm start
 ```
+
 <!--
 ## Notations
 
