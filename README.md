@@ -1,7 +1,8 @@
 # Fastify GymPass API
 
-[![](https://img.shields.io/badge/NodeJS-project-green?logo=nodedotjs)](#)
-[![](https://img.shields.io/badge/Fastify-framework-darkgray?logo=fastify)](#)
+[![](https://img.shields.io/badge/NodeJS-project-green?logo=nodedotjs)](https://nodejs.org/en)
+[![](https://img.shields.io/badge/Fastify-framework-darkgray?logo=fastify)](https://fastify.dev/)
+[![](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io/)
 [![](https://img.shields.io/badge/Build%20to-learn-blue?logo=github)](#)
 
 <!--
@@ -14,10 +15,10 @@ A GymPass-style API that allows users to register, authenticate, and interact wi
 
 ## ⚡ Technologies
 
-- NodeJS
-- Typescript (tsx and tsup)
-- Fastify (API)
-- PostgresSQL (Database)
+- [NodeJS](https://nodejs.org/en) with Typescript
+- [Fastify](https://fastify.dev/) for API
+- [PostgresSQL](https://www.postgresql.org/) to Database
+- [Prisma](https://www.prisma.io/) to Database ORM
 
 ## 🚩 Setup
 
