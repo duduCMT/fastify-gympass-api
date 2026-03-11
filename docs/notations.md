@@ -4,7 +4,7 @@
 
 To init prisma, use:
 
-```bash
+```sh
 npx prisma init
 ```
 
@@ -29,7 +29,7 @@ Another recommended configuration is to set up the Prisma editor settings in VS 
 
 Prisma can generate Typescript based on your schema files. To generate the types, run the following command: 
 
-```bash
+```sh
 npx prisma generate
 ```
 
@@ -40,24 +40,24 @@ Note: Prisma will generate the TypeScript types in the following file:
 
 To setup the database, run the following command:
 
-```bash
+```sh
 docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnamilegacy/postgresql
 ```
 
 After that, you can use the following command to start the Docker:
 
-```bash
+```sh
 docker start api-solid-pg
 ```
 
 To stop Docker container, use the following command:
 
-```bash
+```sh
 docker stop api-solid-pg
 ```
 
 To remove the Docker container, use the following command:
 
-```bash
+```sh
 docker rm api-solid-pg
 ```

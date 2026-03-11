@@ -30,7 +30,7 @@ Next, proceed by configuring the node version correctly.
 
 If you are using nvm, run:
 
-```bash
+```sh
 nvm install && nvm use
 ```
 
@@ -38,37 +38,37 @@ Else, change your Node Version to `18.14.0`.
 
 Install Dependencies With:
 
-```bash
+```sh
 npm install
 ```
 
 Execute the Docker Container with the following command:
 
-```bash
+```sh
 docker compose up -d
 ```
 
 To create the database, use the following command:
 
-```bash
+```sh
 npx prisma migrate dev
 ```
 
 After all, if yor can run the project in developer mode, use:
 
-```bash
+```sh
 npm run start:dev
 ```
 
 To run the project without developer mode, use:
 
-```bash
+```sh
 npm run build && npm start
 ```
 
 To stop the Docker Container, run the following command:
 
-```bash
+```sh
 docker compose stop
 ```
 
@@ -76,7 +76,7 @@ docker compose stop
 
 To run Prisma Studio to manage the database, use the following command:
 
-```bash
+```sh
 npx prisma studio
 ```
 
