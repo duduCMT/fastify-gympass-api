@@ -42,16 +42,34 @@ Install Dependencies With:
 npm install
 ```
 
-To run the project in developer mode, use:
+Execute the Docker Container with the following command:
+
+```bash
+docker compose up -d
+```
+
+To create the database, use the following command:
+
+```bash
+npx prisma migrate dev
+```
+
+After all, if yor can run the project in developer mode, use:
 
 ```bash
 npm run start:dev
 ```
 
-To run the project, use:
+To run the project without developer mode, use:
 
 ```bash
 npm run build && npm start
+```
+
+To stop the Docker Container, run the following command:
+
+```bash
+docker compose stop
 ```
 
 ## Prisma
