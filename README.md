@@ -1,9 +1,10 @@
 # Fastify GymPass API
 
-[![](https://img.shields.io/badge/NodeJS-project-green?logo=nodedotjs)](https://nodejs.org/en)
-[![](https://img.shields.io/badge/Fastify-framework-darkgray?logo=fastify)](https://fastify.dev/)
-[![](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io/)
-[![](https://img.shields.io/badge/Build%20to-learn-blue?logo=github)](#)
+[![](https://img.shields.io/badge/NodeJS--green?logo=nodedotjs)](https://nodejs.org/en)
+[![](https://img.shields.io/badge/Fastify--darkgray?logo=fastify)](https://fastify.dev/)
+[![](https://img.shields.io/badge/Prisma--2D3748?logo=prisma)](https://www.prisma.io/)
+[![](https://img.shields.io/badge/Docker--blue?logo=docker)](https://docs.docker.com/)
+[![](https://img.shields.io/badge/Build%20to%20learn--white?logo=github)](#)
 
 <!--
 [![](https://img.shields.io/badge/Production-On%20Render-blue)]()
@@ -15,6 +16,7 @@ A GymPass-style API that allows users to register, authenticate, and interact wi
 
 ## ⚡ Technologies
 
+- [Docker](https://docs.docker.com/) to setup
 - [NodeJS](https://nodejs.org/en) with Typescript
 - [Fastify](https://fastify.dev/) for API
 - [PostgresSQL](https://www.postgresql.org/) to Database
@@ -51,6 +53,15 @@ To run the project, use:
 ```bash
 npm run build && npm start
 ```
+
+## Prisma
+
+To run Prisma Studio to manage the database, use the following command:
+
+```bash
+npx prisma studio
+```
+
 
 <!--
 ## Notations

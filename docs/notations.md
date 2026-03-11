@@ -35,3 +35,29 @@ npx prisma generate
 
 Note: Prisma will generate the TypeScript types in the following file: 
 `node_modules/.prisma/client/index.d.ts`
+
+## Docker
+
+To setup the database, run the following command:
+
+```bash
+docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnamilegacy/postgresql
+```
+
+After that, you can use the following command to start the Docker:
+
+```bash
+docker start api-solid-pg
+```
+
+To stop Docker container, use the following command:
+
+```bash
+docker stop api-solid-pg
+```
+
+To remove the Docker container, use the following command:
+
+```bash
+docker rm api-solid-pg
+```
