@@ -9,6 +9,7 @@
   "material-icon-theme.folders.associations": {
     "use-cases": "command",
     "usecases": "command",
-    "use-case": "command"
+    "use-case": "command",
+    "in-memory": "test"
   }
 }

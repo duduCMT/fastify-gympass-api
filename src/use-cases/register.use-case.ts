@@ -1,6 +1,7 @@
 import { UsersRepository } from "@/repositories";
 import { hash } from "bcryptjs";
 import { UserAlreadyExistsError } from "./errors";
+import { User } from "@/@types";
 
 interface RegisterUseCaseParams {
   name: string;
@@ -8,10 +9,18 @@ interface RegisterUseCaseParams {
   password: string;
 }
 
+interface RegisterUseCaseResponse {
+  user: User;
+}
+
 export class RegisterUseCase {
   constructor(private usersRepository: UsersRepository) {}
 
-  async execute({ email, name, password }: RegisterUseCaseParams) {
+  async execute({
+    email,
+    name,
+    password,
+  }: RegisterUseCaseParams): Promise<RegisterUseCaseResponse> {
     const password_hash = await hash(password, 6);
 
     const userWithSameEmail = await this.usersRepository.findByEmail(email);
@@ -20,10 +29,12 @@ export class RegisterUseCase {
       throw new UserAlreadyExistsError();
     }
 
-    await this.usersRepository.create({
+    const user = await this.usersRepository.create({
       name,
       email,
       password_hash,
     });
+
+    return { user };
   }
 }
