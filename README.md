@@ -21,6 +21,7 @@ A GymPass-style API that allows users to register, authenticate, and interact wi
 - [Fastify](https://fastify.dev/) for API
 - [PostgresSQL](https://www.postgresql.org/) to Database
 - [Prisma](https://www.prisma.io/) to Database ORM
+- [Vitest](https://vitest.dev/) to Tests
 
 ## 🚩 Setup
 
@@ -79,7 +80,6 @@ To run Prisma Studio to manage the database, use the following command:
 ```sh
 npx prisma studio
 ```
-
 
 <!--
 ## Notations
