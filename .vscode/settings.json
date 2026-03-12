@@ -5,5 +5,10 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "prisma.pinToPrisma6": true
+  "prisma.pinToPrisma6": true,
+  "material-icon-theme.folders.associations": {
+    "use-cases": "command",
+    "usecases": "command",
+    "use-case": "command"
+  }
 }
