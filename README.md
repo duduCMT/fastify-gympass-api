@@ -81,6 +81,20 @@ To run Prisma Studio to manage the database, use the following command:
 npx prisma studio
 ```
 
+## Tests
+
+To run the unit tests, use the command:
+
+```sh
+npm run test
+```
+
+To view the test coverage, use the command:
+
+```sh
+npm run test:coverage
+```
+
 <!--
 ## Notations
 

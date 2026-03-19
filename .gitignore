@@ -10,5 +10,8 @@ node_modules
 dist
 build
 
+# tests
+coverage
+
 # database
 db/*.db
