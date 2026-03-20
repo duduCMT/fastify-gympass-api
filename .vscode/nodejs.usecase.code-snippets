@@ -1,0 +1,21 @@
+{
+  "UseCase Template": {
+    "prefix": "usecase",
+    "body": [
+      "import { ${2}Repository } from \"@/repositories\";",
+      "",
+      "interface ${1}UseCaseRequest {}",
+      "",
+      "interface ${1}UseCaseResponse {}",
+      "",
+      "export class ${1}UseCase {",
+      "  constructor(private ${3:usersRepository}: ${2}Repository) {}",
+      "",
+      "  async execute({}: ${1}UseCaseRequest): Promise<${1}UseCaseResponse> {",
+      "    return {};",
+      "  }",
+      "}",
+    ],
+    "description": "Create a use case template",
+  },
+}
