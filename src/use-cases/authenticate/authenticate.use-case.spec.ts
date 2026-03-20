@@ -21,8 +21,6 @@ describe("Authenticate Use Case", () => {
       password_hash: await hash("123", 6),
     });
 
-    const sut = new AuthenticateUseCase(usersRepository);
-
     const { user } = await sut.execute({
       email: "johndue@example.com",
       password: "123",
