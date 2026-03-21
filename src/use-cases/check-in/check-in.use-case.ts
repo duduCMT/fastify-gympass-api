@@ -1,9 +1,13 @@
 import { CheckIn } from "@/@types";
 import { CheckInsRepository } from "@/repositories/@types/check-ins.repository";
+import { GymsRepository } from "@/repositories/@types/gyms.repository";
+import { ResourceNotFoundError } from "../errors";
 
 interface CheckInUseCaseRequest {
   userId: string;
   gymId: string;
+  userLatitude: number;
+  userLongitude: number;
 }
 
 interface CheckInUseCaseResponse {
@@ -11,12 +15,32 @@ interface CheckInUseCaseResponse {
 }
 
 export class CheckInUseCase {
-  constructor(private checkInRepository: CheckInsRepository) {}
+  constructor(
+    private checkInRepository: CheckInsRepository,
+    private gymsRepository: GymsRepository,
+  ) {}
 
   async execute({
     gymId,
     userId,
+    userLatitude,
+    userLongitude,
   }: CheckInUseCaseRequest): Promise<CheckInUseCaseResponse> {
+    const gym = await this.gymsRepository.findById(gymId);
+
+    if (!gym) {
+      throw new ResourceNotFoundError();
+    }
+
+    const checkInOnSameDay = await this.checkInRepository.findByUserIdOnDate(
+      userId,
+      new Date(),
+    );
+
+    if (checkInOnSameDay) {
+      throw new Error();
+    }
+
     const checkIn = await this.checkInRepository.create({
       gym_id: gymId,
       user_id: userId,
