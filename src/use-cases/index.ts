@@ -9,3 +9,4 @@ export * from "./get-user-metrics";
 export * from "./get-user-profile";
 export * from "./register";
 export * from "./search-gyms";
+export * from "./validate-check-in";
