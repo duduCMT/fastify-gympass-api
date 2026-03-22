@@ -3,6 +3,7 @@ export * from "./check-in";
 export * from "./create-gym";
 export * from "./errors";
 export * from "./factories";
+export * from "./fetch-nearby-gyms";
 export * from "./fetch-user-check-ins-history";
 export * from "./get-user-metrics";
 export * from "./get-user-profile";
