@@ -4,5 +4,6 @@ export * from "./create-gym";
 export * from "./errors";
 export * from "./factories";
 export * from "./fetch-user-check-ins-history";
+export * from "./get-user-metrics";
 export * from "./get-user-profile";
 export * from "./register";
