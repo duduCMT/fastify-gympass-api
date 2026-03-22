@@ -18,8 +18,8 @@ describe("Check-in Use Case", () => {
       title: "Gym",
       created_at: new Date(),
       description: "",
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(-6.256922),
+      longitude: new Decimal(-36.52182),
       phone: "",
       updated_at: new Date(),
     });
@@ -43,6 +43,30 @@ describe("Check-in Use Case", () => {
     });
 
     await expect(checkIn.id).toEqual(expect.any(String));
+  });
+
+  it("should not be able to check in on distant gym", async () => {
+    vi.setSystemTime(new Date(2026, 0, 20, 8, 0, 0));
+
+    gymsRepository.items.push({
+      id: "gym-id-2",
+      title: "Gym",
+      created_at: new Date(),
+      description: "",
+      latitude: new Decimal(-6.2609587),
+      longitude: new Decimal(-36.5221023),
+      phone: "",
+      updated_at: new Date(),
+    });
+
+    await expect(() =>
+      sut.execute({
+        userId: "user-id",
+        gymId: "gym-id-2",
+        userLatitude: -6.256922,
+        userLongitude: -36.52182,
+      }),
+    ).rejects.toBeInstanceOf(Error);
   });
 
   it("should not be able to check in twice in the same day", async () => {
