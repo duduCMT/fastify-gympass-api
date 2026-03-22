@@ -1,6 +1,7 @@
 import { CheckIn } from "@/@types";
 import { CheckInsRepository } from "@/repositories";
-import { ResourceNotFoundError } from "../errors";
+import { LateCheckInValidationError, ResourceNotFoundError } from "../errors";
+import dayjs from "dayjs";
 
 interface ValidateCheckInUseCaseRequest {
   checkInId: string;
@@ -20,6 +21,15 @@ export class ValidateCheckInUseCase {
 
     if (!checkIn) {
       throw new ResourceNotFoundError();
+    }
+
+    const distanceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
+      checkIn.created_at,
+      "minutes",
+    );
+
+    if (distanceInMinutesFromCheckInCreation > 20) {
+      throw new LateCheckInValidationError();
     }
 
     checkIn.validated_at = new Date();
