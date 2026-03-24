@@ -1,0 +1,13 @@
+{
+  "UseCase Template": {
+    "prefix": "prisma-respotitory",
+    "body": [
+      "import { prisma } from \"@/lib/prisma\";",
+      "import { ${1}Repository } from \"@/repositories\";",
+      "",
+      "export class Prisma${1}Repository implements ${1}Repository {",
+      "}",
+    ],
+    "description": "Create a use case template",
+  },
+}
