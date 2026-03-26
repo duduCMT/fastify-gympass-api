@@ -1,1 +1,1 @@
-export * from "./profile.controller";
+export * from "./me.controller";

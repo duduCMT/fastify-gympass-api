@@ -95,6 +95,12 @@ To view the test coverage, use the command:
 npm run test:coverage
 ```
 
+To run the e2e tests, use the command:
+
+```sh
+npm run test:e2e
+```
+
 <!--
 ## Notations
 
