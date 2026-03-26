@@ -1,14 +1,14 @@
 import { expect, describe, it, beforeEach, afterEach, vi } from "vitest";
 
 import { InMemoryCheckInsRepository } from "@/repositories";
-import { CheckInUseCase } from "./check-in.use-case";
+import { CreateCheckIn } from "./create-check-in.use-case";
 import { InMemoryGymsRepository } from "@/repositories/in-memory/in-memory-gyms.repository";
 import { Gym } from "@/@types";
 import { MaxDistanceError, MaxNumberOfCheckInsError } from "../errors";
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
-let sut: CheckInUseCase;
+let sut: CreateCheckIn;
 let initialGym: Gym;
 
 describe("Check-in Use Case", () => {
@@ -24,7 +24,7 @@ describe("Check-in Use Case", () => {
       phone: null,
     });
 
-    sut = new CheckInUseCase(checkInsRepository, gymsRepository);
+    sut = new CreateCheckIn(checkInsRepository, gymsRepository);
     vi.useFakeTimers();
   });
 

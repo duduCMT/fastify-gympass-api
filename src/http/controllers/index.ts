@@ -1,3 +1,2 @@
-export * from "./authenticate";
-export * from "./me";
-export * from "./register";
+export * from "./users/users.routes";
+export * from "./gyms/gyms.routes";

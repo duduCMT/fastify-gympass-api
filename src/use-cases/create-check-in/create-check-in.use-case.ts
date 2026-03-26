@@ -8,18 +8,18 @@ import {
 } from "../errors";
 import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
 
-interface CheckInUseCaseRequest {
+interface CreateCheckInRequest {
   userId: string;
   gymId: string;
   userLatitude: number;
   userLongitude: number;
 }
 
-interface CheckInUseCaseResponse {
+interface CreateCheckInResponse {
   checkIn: CheckIn;
 }
 
-export class CheckInUseCase {
+export class CreateCheckIn {
   constructor(
     private checkInRepository: CheckInsRepository,
     private gymsRepository: GymsRepository,
@@ -30,7 +30,7 @@ export class CheckInUseCase {
     userId,
     userLatitude,
     userLongitude,
-  }: CheckInUseCaseRequest): Promise<CheckInUseCaseResponse> {
+  }: CreateCheckInRequest): Promise<CreateCheckInResponse> {
     const gym = await this.gymsRepository.findById(gymId);
 
     if (!gym) {

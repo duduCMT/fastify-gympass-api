@@ -1,5 +1,5 @@
 export * from "./authenticate";
-export * from "./check-in";
+export * from "./create-check-in";
 export * from "./create-gym";
 export * from "./errors";
 export * from "./factories";

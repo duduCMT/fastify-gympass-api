@@ -1,5 +1,5 @@
 export * from "./make-authenticate-use-case";
-export * from "./make-check-in-use-case";
+export * from "./make-create-check-in-use-case";
 export * from "./make-create-gym-use-case";
 export * from "./make-fetch-nearby-gyms-use-case";
 export * from "./make-fetch-users-check-in-history-use-case";
