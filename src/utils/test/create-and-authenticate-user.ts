@@ -1,6 +1,7 @@
 import request from "supertest";
 
 import { FastifyInstance } from "fastify";
+import { User } from "@/@types";
 
 export async function createAndAuthenticateUser(app: FastifyInstance) {
   const user = {
@@ -9,7 +10,7 @@ export async function createAndAuthenticateUser(app: FastifyInstance) {
     password: "123456",
   };
 
-  await request(app.server).post("/users").send({
+  const userResponse = await request(app.server).post("/users").send({
     name: user.name,
     email: user.email,
     password: user.password,
@@ -24,6 +25,6 @@ export async function createAndAuthenticateUser(app: FastifyInstance) {
 
   return {
     token,
-    user,
+    user: userResponse.body.user as Omit<User, "password_hash">,
   };
 }
