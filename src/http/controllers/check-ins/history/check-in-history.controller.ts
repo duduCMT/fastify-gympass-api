@@ -1,7 +1,4 @@
-import {
-  makeFetchUserCheckInsHistoryUseCase,
-  makeSearchGymsUseCase,
-} from "@/use-cases";
+import { makeFetchUserCheckInsHistoryUseCase } from "@/use-cases";
 import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";
 

@@ -1,1 +1,1 @@
-export * from "./nearby.controller";
+export * from "./gyms-nearby.controller";
