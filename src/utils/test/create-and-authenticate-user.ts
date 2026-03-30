@@ -26,5 +26,6 @@ export async function createAndAuthenticateUser(app: FastifyInstance) {
   return {
     token,
     user: userResponse.body.user as Omit<User, "password_hash">,
+    authResponse,
   };
 }

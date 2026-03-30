@@ -18,7 +18,7 @@ describe("Check-In Metrics Controller", () => {
   it("should be able to get the total count of check-ins", async () => {
     vi.setSystemTime(new Date(2026, 0, 20, 8, 0, 0));
 
-    const { token, user } = await createAndAuthenticateUser(app);
+    const { token, user, authResponse } = await createAndAuthenticateUser(app);
 
     const gymResponse = await request(app.server)
       .post("/gyms")
@@ -45,9 +45,18 @@ describe("Check-In Metrics Controller", () => {
 
     vi.advanceTimersByTime(ONE_DAY_IN_MS);
 
+    const cookies = authResponse.get("Set-Cookie") ?? [];
+
+    const refreshResponse = await request(app.server)
+      .patch("/token/refresh")
+      .set("Cookie", cookies)
+      .send();
+
+    const refreshedToken = refreshResponse.body.token;
+
     await request(app.server)
       .post(`/check-ins`)
-      .set("Authorization", `Bearer ${token}`)
+      .set("Authorization", `Bearer ${refreshedToken}`)
       .send({
         userId: user.id,
         gymId: gymResponse.body.gym.id,
@@ -57,10 +66,8 @@ describe("Check-In Metrics Controller", () => {
 
     const response = await request(app.server)
       .get(`/check-ins/metrics`)
-      .set("Authorization", `Bearer ${token}`)
+      .set("Authorization", `Bearer ${refreshedToken}`)
       .send();
-
-    console.log(response.body);
 
     expect(response.statusCode).toEqual(200);
     expect(response.body.checkInsCount).toEqual(2);
