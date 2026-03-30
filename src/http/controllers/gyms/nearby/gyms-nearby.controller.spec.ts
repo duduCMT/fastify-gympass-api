@@ -14,7 +14,7 @@ describe("Gyms Nearby Controller", () => {
   });
 
   it("should be able to list nearby gyms", async () => {
-    const { token, user } = await createAndAuthenticateUser(app);
+    const { token, user } = await createAndAuthenticateUser(app, "ADMIN");
 
     const nearbyGym = await request(app.server)
       .post("/gyms")

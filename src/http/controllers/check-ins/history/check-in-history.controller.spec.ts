@@ -18,7 +18,10 @@ describe("Check-In History Controller", () => {
   it("should be able to list the history of check-ins", async () => {
     vi.setSystemTime(new Date(2026, 0, 20, 8, 0, 0));
 
-    const { token, user, authResponse } = await createAndAuthenticateUser(app);
+    const { token, user, authResponse } = await createAndAuthenticateUser(
+      app,
+      "ADMIN",
+    );
 
     const gymResponse = await request(app.server)
       .post("/gyms")

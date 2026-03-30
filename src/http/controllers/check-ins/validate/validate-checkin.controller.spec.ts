@@ -19,7 +19,7 @@ describe("Check-In Validate Controller", () => {
   it("should be able to validate check-ins", async () => {
     vi.setSystemTime(new Date(2026, 0, 20, 8, 0, 0));
 
-    const { token, user } = await createAndAuthenticateUser(app);
+    const { token, user } = await createAndAuthenticateUser(app, "ADMIN");
 
     const gymResponse = await request(app.server)
       .post("/gyms")

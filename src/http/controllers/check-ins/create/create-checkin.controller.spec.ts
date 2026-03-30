@@ -14,7 +14,7 @@ describe("Create Check-In Controller", () => {
   });
 
   it("should be able to create a check-in", async () => {
-    const { token, user } = await createAndAuthenticateUser(app);
+    const { token, user } = await createAndAuthenticateUser(app, "ADMIN");
 
     const gymResponse = await request(app.server)
       .post("/gyms")
